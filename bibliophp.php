@@ -18,10 +18,10 @@ function nettoyer($string) {
     return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // efface les caractères spéciaux.
 }
 
-# fonction remplace les espaces " " par des - 
-function slug($z){
-    $z = strtolower($z);
-    $z = preg_replace('/[^a-z0-9 -]+/', '', $z);
-    $z = str_replace(' ', '-', $z);
-    return trim($z, '-');
+# fonction remplace les espaces " " par des - et enlève les caractères spéciaux et les majuscules
+function repEspaceTiret($string){
+    $string = strtolower($string);
+    $string = preg_replace('/[^a-z0-9 -]+/', '', $string);// efface les caractères spéciaux et les majuscules
+    $string = str_replace(' ', '-', $string);
+    return trim($string, '-');
 }
